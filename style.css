@@ -1,0 +1,1950 @@
+body,
+html {
+    overflow-x: hidden;
+    scrollbar-width: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container,
+.wrapper,
+.blog,
+.secondContainer,
+.section-1a-error,
+.Glint-explore,
+.last,
+.container-2nd-error-fixed,
+.foot,
+.second-footer {
+    animation: allTree 3s ease-in;
+}
+
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    z-index: -4;
+}
+
+
+/*
+root {
+    --hue: 223;
+    --bg: hsl(var(--hue), 90%, 90%);
+    --fg: hsl(var(--hue), 90%, 10%);
+    --trans-dur: 0.3s;
+    font-size: calc(20px + (30 - 20) * (100vw - 320px) / (1280 - 320));
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 1em/1.5 sans-serif;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.pencil {
+    display: block;
+    width: 10em;
+    height: 10em;
+}
+
+.pencil__body1,
+.pencil__body2,
+.pencil__body3,
+.pencil__eraser,
+.pencil__eraser-skew,
+.pencil__point,
+.pencil__rotate,
+.pencil__stroke {
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.pencil__body1,
+.pencil__body2,
+.pencil__body3 {
+    transform: rotate(-90deg);
+}
+
+.pencil__body1 {
+    animation-name: pencilBody1;
+}
+
+.pencil__body2 {
+    animation-name: pencilBody2;
+}
+
+.pencil__body3 {
+    animation-name: pencilBody3;
+}
+
+.pencil__eraser {
+    animation-name: pencilEraser;
+    transform: rotate(-90deg) translate(49px, 0);
+}
+
+.pencil__eraser-skew {
+    animation-name: pencilEraserSkew;
+    animation-timing-function: ease-in-out;
+}
+
+.pencil__point {
+    animation-name: pencilPoint;
+    transform: rotate(-90deg) translate(49px, -30px);
+}
+
+.pencil__rotate {
+    animation-name: pencilRotate;
+}
+
+.pencil__stroke {
+    animation-name: pencilStroke;
+    transform: translate(100px, 100px) rotate(-113deg);
+}
+
+
+
+/* Animations */
+
+
+/*
+@keyframes pencilBody1 {
+    from,
+    to {
+        stroke-dashoffset: 351.86;
+        transform: rotate(-90deg);
+    }
+    50% {
+        stroke-dashoffset: 150.8;
+        transform: rotate(-225deg);
+    }
+}
+
+@keyframes pencilBody2 {
+    from,
+    to {
+        stroke-dashoffset: 406.84;
+        transform: rotate(-90deg);
+    }
+    50% {
+        stroke-dashoffset: 174.36;
+        transform: rotate(-225deg);
+    }
+}
+@keyframes pencilBody3 {
+    from,
+    to {
+        stroke-dashoffset: 296.88;
+        transform: rotate(-90deg);
+    }
+    50% {
+        stroke-dashoffset: 127.23;
+        transform: rotate(-225deg);
+    }
+}
+
+@keyframes pencilEraser {
+    from,
+    to {
+        transform: rotate(-45deg) translate(49px, 0);
+    }
+    50% {
+        transform: rotate(0deg) translate(49px, 0);
+    }
+}
+
+@keyframes pencilEraserSkew {
+    from,
+    32.5%,
+    67.5%,
+    to {
+        transform: skewX(0);
+    }
+    35%,
+    65% {
+        transform: skewX(-4deg);
+    }
+    37.5%,
+    62.5% {
+        transform: skewX(8deg);
+    }
+    40%,
+    45%,
+    50%,
+    55%,
+    60% {
+        transform: skewX(-15deg);
+    }
+    42.5%,
+    47.5%,
+    52.5%,
+    57.5% {
+        transform: skewX(15deg);
+    }
+}
+
+@keyframes pencilPoint {
+    from,
+    to {
+        transform: rotate(-90deg) translate(49px, -30px);
+    }
+    50% {
+        transform: rotate(-225deg) translate(49px, -30px);
+    }
+}
+
+@keyframes pencilRotate {
+    from {
+        transform: translate(100px, 100px) rotate(0);
+    }
+    to {
+        transform: translate(100px, 100px) rotate(720deg);
+    }
+}
+
+@keyframes pencilStroke {
+    from {
+        stroke-dashoffset: 439.82;
+        transform: translate(100px, 100px) rotate(-113deg);
+    }
+    50% {
+        stroke-dashoffset: 164.93;
+        transform: translate(100px, 100px) rotate(-113deg);
+    }
+    75%,
+    to {
+        stroke-dashoffset: 439.82;
+        transform: translate(100px, 100px) rotate(112deg);
+    }
+}
+
+@keyframes allTree {
+    0%,
+    90% {
+        display: none;
+    }
+    100% {
+        display: block !important;
+    }
+}
+
+
+/* 
+Burger
+*/
+
+
+/* other */
+
+.loader {
+    width: 65px;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    box-shadow: 0 0 0 3px inset #3bacf0;
+    animation: l5 2.5s infinite;
+}
+
+.loader:after {
+    animation-delay: -1.25s;
+    border-radius: 0;
+}
+
+@keyframes l5 {
+    0% {
+        inset: 0 35px 35px 0
+    }
+    12.5% {
+        inset: 0 35px 0 0
+    }
+    25% {
+        inset: 35px 35px 0 0
+    }
+    37.5% {
+        inset: 35px 0 0 0
+    }
+    50% {
+        inset: 35px 0 0 35px
+    }
+    62.5% {
+        inset: 0 0 0 35px
+    }
+    75% {
+        inset: 0 0 35px 35px
+    }
+    87.5% {
+        inset: 0 0 35px 0
+    }
+    100% {
+        inset: 0 35px 35px 0
+    }
+}
+
+@keyframes allTree {
+    0%,
+    90% {
+        display: none;
+    }
+    100% {
+        display: block !important;
+    }
+}
+
+
+/* other */
+
+#thisInput {
+    display: none;
+}
+
+.burger {
+    display: none;
+    position: relative;
+    z-index: 5;
+}
+
+#logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+
+#main-menu {
+    display: block;
+    height: 100px;
+    width: 100%;
+    background: #3D0E61;
+    margin: 0px;
+    z-index: 9;
+}
+
+#main-menu ul {
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 9;
+}
+
+#main-menu li {
+    list-style-type: none;
+    font-size: 2rem;
+}
+
+#main-menu a {
+    color: #B9FAF8;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#main-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+#hamburger-menu {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    display: block;
+    right: 20px;
+    width: 40px;
+    z-index: 9;
+    height: 40px;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Cabin', Sans-serif;
+    background: linear-gradient( to bottom, #fff, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
+}
+
+#hamburger-menu #sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+#hamburger-menu h3 {
+    color: #222222;
+    font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+    padding-left: 0px;
+}
+
+#hamburger-menu li {
+    list-style-type: none;
+    line-height: 3rem;
+}
+
+#hamburger-menu a {
+    color: #fff;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+#hamburger-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input:checked+#hamburger-menu #sidebar-menu {
+    visibility: visible;
+    left: 0;
+}
+
+#hamburger-input:checked~.overlay {
+    visibility: visible;
+    opacity: 0.4;
+}
+
+
+/*
+Burger
+*/
+
+@font-face {
+    font-family: "roboto";
+    src: url(./Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "medium";
+    src: url(./Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: "italic";
+    src: url(./Roboto-MediumItalic.ttf);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+}
+
+.container header {
+    width: 100%;
+    position: relative;
+    padding: 15px;
+    background-color: transparent;
+}
+
+.container header .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container header .row .col {
+    flex-basis: 16%;
+}
+
+.container header .row .col .igmg {
+    position: relative;
+    left: 50px;
+}
+
+.container header .row .col .igmg img {
+    width: 70px;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.container header .row .col ul {
+    display: flex;
+}
+
+.container header .row .col ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 30px;
+    color: #fff;
+    font: 500 13px/73px "medium";
+    cursor: pointer;
+}
+
+.container header .row .col button {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 134px;
+    border-radius: 3px;
+    outline: none;
+    color: #fff;
+    font-family: "roboto";
+    line-height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 300ms linear 0s;
+    cursor: pointer;
+    box-shadow: none;
+    font-weight: 500;
+}
+
+.container header .row .col button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.container .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+}
+
+.container .flex .col-flex {
+    flex-basis: 50%;
+    padding: 130px 0;
+}
+
+.container .flex .col-flex .content h1 {
+    color: #fff;
+    font-size: 45px;
+    font-family: "medium";
+    padding: 3px 0;
+    font-weight: 800;
+}
+
+.container .flex .col-flex .title p {
+    color: #fff;
+    font-family: "roboto";
+    font-weight: 300;
+    padding: 3px 0;
+}
+
+.container .flex .col-flex .btn {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.container .flex .col-flex .btn button {
+    width: 150px;
+    line-height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    font-family: "roboto";
+    font-weight: 500;
+    transition: all 300ms linear 0s;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.container .flex .col-flex .btn button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.container .flex .col-flex .btn .download {
+    background-color: #fff;
+    color: #000;
+    transition: all 300ms linear 0s;
+}
+
+.container .flex .col-flex .btn .download:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.container .flex .col-flex img {
+    width: 600px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.wrapper .title {
+    text-align: center;
+    padding: 80px;
+}
+
+.wrapper .title h1 {
+    font-size: 35px;
+    color: #000;
+    font-family: "medium";
+}
+
+.wrapper .title .paragraph {
+    text-align: center;
+}
+
+.wrapper .title .paragraph p {
+    color: #777777;
+    font-family: "roboto";
+    font-weight: 500;
+    padding: 3px 0;
+    font-size: 14px;
+}
+
+
+/* .wrapper .row .col .img:hover {
+    background-image: -webkit-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+    background-image: -ms-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    color: #fff;
+} */
+
+.wrapper .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    padding: 50px 0;
+}
+
+.wrapper .row .col {
+    flex-basis: 33%;
+}
+
+.wrapper .row .col:hover .image {
+    background-image: -moz-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+    background-image: -webkit-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+    background-image: -ms-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.wrapper .row .col:hover .content h3 {
+    color: #3bacf0;
+}
+
+.wrapper .row .col .image {
+    height: 100%;
+    padding: 15px 20px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    background: #f9f9ff;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    left: 38%;
+    bottom: 20px
+}
+
+.wrapper .row .col .image .img {
+    text-align: center;
+}
+
+.wrapper .row .col .image .img img {
+    width: 50px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wrapper .row .col .content {
+    text-align: center;
+}
+
+.wrapper .row .col .content h3 {
+    color: #000;
+    font-family: "roboto";
+    font-weight: 600;
+}
+
+.wrapper .row .col .main-content {
+    text-align: center;
+}
+
+.wrapper .row .col .main-content p {
+    color: #777777;
+    font-family: "roboto";
+    font-size: 15px;
+    font-weight: 500;
+    padding: 3px 0;
+}
+
+.blog {
+    width: 100%;
+    background-color: #edf6ff;
+    height: 100%;
+}
+
+.blog .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    padding: 70px;
+}
+
+.blog .row .col {
+    flex-basis: 25%;
+}
+
+.blog .row .col button {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    line-height: 60px;
+    font-size: 13px;
+    font-family: "medium";
+    font-weight: 400;
+    color: #222222;
+    background-color: #fff;
+    transition: all 300ms linear 0s;
+}
+
+.blog .row .col .btn {
+    background-image: -webkit-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+    background-image: -ms-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.blog .row .col button:hover {
+    background-image: -webkit-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+    background-image: -ms-linear-gradient(0deg, #4dabff 0%, #62ddff 100%);
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.blog .row .col .btn:hover {
+    color: #222222;
+    background-image: -webkit-linear-gradient(0deg, #fff 0%, #fff 100%);
+    background-image: -ms-linear-gradient(0deg, #fff 0%, #fff 100%);
+}
+
+.blog .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    padding: 50px;
+}
+
+.blog .flex .col-flex {
+    flex-basis: 50%;
+}
+
+.blog .flex .col-flex .content h1 {
+    color: #000;
+    font-family: "medium";
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.blog .flex .col-flex .title h5 {
+    color: #000;
+    font-family: "medium";
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.blog .flex .col-flex .title p {
+    padding: 3px 0;
+    color: #777777;
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.blog .flex .col-flex .button button {
+    width: 150px;
+    line-height: 50px;
+    font-family: "roboto";
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-size: 200% auto;
+    transition: all 300ms linear 0s;
+    background-image: linear-gradient(to right, #4dabff 0%, #62ddff 48%, #4dabff 100%);
+}
+
+.blog .flex .col-flex .button button:hover {
+    background-position: right center;
+}
+
+.blog .flex .col-flex .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.secondContainer {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.secondContainer .content {
+    text-align: center;
+    padding: 70px;
+}
+
+.secondContainer .content h1 {
+    font-size: 35px;
+    color: #000;
+    font-family: "medium";
+    font-weight: 500;
+}
+
+.secondContainer .title {
+    text-align: center;
+}
+
+.secondContainer .title p {
+    padding: 3px 0;
+    color: #777777;
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.secondContainer .massive-image {
+    text-align: center;
+}
+
+.secondContainer .massive-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-1a-error {
+    background-color: #edf6ff;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+}
+
+.section-1a-error .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    padding: 50px;
+}
+
+.section-1a-error .row .col {
+    flex-basis: 50%;
+}
+
+.section-1a-error .row .col .content h1 {
+    color: #000;
+    font-family: "medium";
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.section-1a-error .row .col .title h5 {
+    color: #000;
+    font-family: "medium";
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.section-1a-error .row .col .title p {
+    padding: 3px 0;
+    color: #777777;
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.section-1a-error .row .col .bttn button {
+    width: 150px;
+    line-height: 50px;
+    font-family: "roboto";
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-size: 200% auto;
+    transition: all 300ms linear 0s;
+    background-image: linear-gradient(to right, #4dabff 0%, #62ddff 48%, #4dabff 100%);
+}
+
+.section-1a-error .row .col .bttn button:hover {
+    background-position: right center;
+}
+
+.Glint-explore {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.Glint-explore .title {
+    text-align: center;
+    padding: 70px;
+}
+
+.Glint-explore .title h1 {
+    font-size: 35px;
+    color: #000;
+    font-family: "medium";
+    font-weight: 500;
+}
+
+.Glint-explore .title .content {
+    text-align: center;
+}
+
+.Glint-explore .title .content p {
+    padding: 3px 0;
+    color: #777777;
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.Glint-explore .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+    padding: 50px;
+}
+
+.Glint-explore .row .col {
+    flex-basis: 33%;
+    border: 1px solid #edf6ff;
+}
+
+.Glint-explore .row .col:hover .main-content {
+    transition: all 300ms linear 0s;
+    background-image: linear-gradient(to right, #4dabff 0%, #62ddff 48%, #4dabff 100%);
+}
+
+.Glint-explore .row .col:hover .main {
+    transition: all 300ms linear 0s;
+    background-image: linear-gradient(to right, #4dabff 0%, #62ddff 48%, #4dabff 100%);
+}
+
+.Glint-explore .row .col:hover .btn button {
+    transition: all 300ms linear 0s;
+    color: #000;
+    background-image: linear-gradient(to right, #fff 0%, #fff 48%, #fff 100%);
+}
+
+.Glint-explore .row .col:hover .main .info h1 {
+    color: #fff;
+    transition: all 300ms linear 0s;
+}
+
+.Glint-explore .row .col:hover .main-content h3 {
+    color: #fff;
+    transition: all 300ms linear 0s;
+}
+
+.Glint-explore .row .col:hover .main .info span {
+    color: #fff;
+    transition: all 300ms linear 0s;
+}
+
+.Glint-explore .row .col:hover .main .info .money {
+    color: #fff;
+    transition: all 300ms linear 0s;
+}
+
+.Glint-explore .row .col .main-content {
+    text-align: center;
+    border-bottom: 1px solid #eeeeee;
+    background-color: #edf6ff;
+    padding: 35px 0;
+}
+
+.Glint-explore .row .col .main-content h3 {
+    color: #000;
+    font-weight: 500;
+    font-family: "medium";
+}
+
+.Glint-explore .row .col .space {
+    text-align: center;
+}
+
+.Glint-explore .row .col .space p {
+    color: #777777;
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 14px;
+    padding: 12px 0;
+}
+
+.Glint-explore .row .col .main {
+    max-width: 280px;
+    margin: 0px auto 40px;
+    background: #edf6ff;
+    border-radius: 5px;
+    padding-top: 18px;
+    padding-bottom: 40px;
+}
+
+.Glint-explore .row .col .main .info {
+    text-align: center;
+}
+
+.Glint-explore .row .col .main .info h1 {
+    color: #000;
+    font-family: "medium";
+    font-weight: 500;
+    position: relative;
+    bottom: 10px;
+    top: 50px;
+    font-size: 70px;
+}
+
+.Glint-explore .row .col .main .price span {
+    color: #777777;
+    font-family: "medium";
+    font-weight: 300;
+    font-size: 14px;
+    display: flex;
+    position: relative;
+    left: 67%;
+    bottom: 16px;
+}
+
+.Glint-explore .row .col .main .price .money {
+    color: #000;
+    font-size: 20px;
+    font-family: "medium";
+    font-weight: 600;
+    left: 24%;
+    bottom: 23px;
+    position: relative;
+}
+
+.Glint-explore .row .col .btn {
+    text-align: center;
+}
+
+.Glint-explore .row .col .btn button {
+    width: 150px;
+    line-height: 50px;
+    font-family: "roboto";
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-size: 200% auto;
+    transition: all 300ms linear 0s;
+    background-image: linear-gradient(to right, #4dabff 0%, #62ddff 48%, #4dabff 100%);
+}
+
+.Glint-explore .row .col .btn button:hover {
+    background-position: right center;
+}
+
+.last {
+    width: 100%;
+    padding: 50px 0;
+    height: 100%;
+    background-color: #edf6ff;
+}
+
+.last .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    column-gap: 20px;
+}
+
+.last .row .col {
+    flex-basis: 50%;
+}
+
+.last .row .col .content h1 {
+    color: #000;
+    font-family: "medium";
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.last .row .col .title h5 {
+    color: #000;
+    font-family: "medium";
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.last .row .col .title p {
+    padding: 3px 0;
+    color: #777777;
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.last .row .col .btn button {
+    width: 150px;
+    line-height: 50px;
+    font-family: "roboto";
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-size: 200% auto;
+    transition: all 300ms linear 0s;
+    background-image: linear-gradient(to right, #4dabff 0%, #62ddff 48%, #4dabff 100%);
+}
+
+.last .row .col .btn button:hover {
+    background-position: right center;
+}
+
+.last .row .col img {
+    width: 550px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-2nd-error-fixed {
+    width: 100%;
+    height: 100%;
+    padding: 80px 0;
+    background-color: #4dabff;
+}
+
+.container-2nd-error-fixed .content {
+    text-align: center;
+    padding: 70px;
+}
+
+.container-2nd-error-fixed .content h1 {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 500;
+    font-family: "medium";
+}
+
+.container-2nd-error-fixed .content .title {
+    text-align: center;
+}
+
+.container-2nd-error-fixed .content .title p {
+    color: #fff;
+    font-family: "medium";
+    padding: 3px 0;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.container-2nd-error-fixed .btn {
+    text-align: center;
+}
+
+.container-2nd-error-fixed .btn button {
+    width: 190px;
+    line-height: 50px;
+    font-family: "roboto";
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    border: none;
+    background-size: 200% auto;
+    transition: all 300ms linear 0s;
+    background-color: #fff;
+}
+
+.container-2nd-error-fixed .btn button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+
+/* .foot {
+    width: 100%;
+    padding: 25px;
+    background-color: #000410;
+}
+
+.foot .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    padding: 50px;
+}
+
+.foot .row .col {
+    flex-basis: 33%;
+}
+
+.foot .row .col .title h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "medium";
+}
+
+.foot .row .col .content p {
+    color: #777777;
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 13.3px;
+    padding: 3px 0;
+}
+
+.foot .row .col .info p {
+    color: #777777;
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 13.3px;
+    padding: 3px 0;
+}
+
+.foot .row .col .new h3 {
+    color: #fff;
+    font-family: "medium";
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.foot .row .col .new {
+    position: relative;
+    bottom: 50px;
+}
+.foot .row .col  */
+
+.foot {
+    background-color: #000410;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+    font-family: "roboto";
+}
+
+.foot .row .col .content h3 {
+    color: #fff;
+    font-family: "roboto";
+}
+
+.foot .row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+.foot .row .col {
+    font-family: "roboto";
+    position: relative;
+    padding-left: 80px;
+}
+
+.foot .row .col ul li {
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    font-family: "roboto";
+    color: #fff;
+    padding: 1px 0 1px;
+}
+
+.foot .row .col ul {
+    padding: 10px 0;
+    font-family: "roboto";
+}
+
+.foot .row .col ul li a {
+    text-decoration: none;
+    color: #fff;
+    opacity: .6;
+    font-family: "roboto";
+    padding: 16px 0 7px;
+}
+
+.foot .row .col i {
+    color: #fff;
+    opacity: .5;
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+    right: 10px;
+}
+
+.foot .row .col i:hover {
+    transform: translateY(-7px);
+    transition: .5s ease-in;
+}
+
+.foot .row .col ul li:hover {
+    transition: .3s ease-in;
+    transform: translateX(7px);
+}
+
+.foot .row .col ul li a:hover {
+    transition: .3s ease-in;
+    color: #4dabff;
+}
+
+.foot .content img {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.foot .content {
+    position: relative;
+    bottom: 0px;
+}
+
+.foot .labeel {
+    position: relative;
+    bottom: 20px;
+}
+
+.foot .labeel h3 {
+    color: #fff;
+    font-family: "roboto";
+}
+
+.foot .bel {
+    position: relative;
+    bottom: 40px;
+}
+
+.foot .bel h3 {
+    color: #fff;
+    font-family: "roboto";
+}
+
+.foot .btn {
+    display: flex;
+    position: relative;
+}
+
+.foot button {
+    border: 1px solid #fff;
+    position: relative;
+    top: 40px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: "roboto";
+    background-size: 200% auto;
+    transition: all 300ms linear 0s;
+    background-image: linear-gradient(to right, #4dabff 0%, #62ddff 48%, #4dabff 100%);
+}
+
+.foot input {
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #000;
+    font-family: "roboto";
+    padding-left: 10px;
+    outline: none;
+}
+
+.foot .row .col .undored-list {
+    position: relative;
+    top: 40px;
+}
+
+.foot .second-footer {
+    text-align: center;
+    position: relative;
+    padding: 12px 0;
+    border-top: 1px solid gray;
+}
+
+.foot .second-footer h4 {
+    color: #fff;
+    font-family: "roboto";
+    opacity: .7;
+}
+
+.foot .second-footer i {
+    color: #fff;
+}
+
+.foot .second-footer span {
+    color: #4dabff;
+    font-family: "roboto";
+    cursor: pointer;
+}
+
+@media (max-width:768px) {
+    body,
+    html {
+        overflow-x: hidden;
+        scrollbar-width: smooth;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    .burger {
+        display: block;
+    }
+    .container header .row .col ul li {
+        display: none;
+    }
+    .container header {
+        position: fixed;
+    }
+    .container header .row .col .igmg {
+        position: relative;
+        left: 321px;
+    }
+    .container header .row .col {
+        flex-basis: 27%;
+    }
+    #hamburger-menu {
+        right: 600px;
+        height: 27px;
+    }
+    #hamburger-input:checked+#hamburger-menu #sidebar-menu {
+        left: 193px;
+    }
+    #hamburger-menu #sidebar-menu {
+        position: fixed;
+        top: 70px;
+        left: -433px;
+        rotate: 90deg;
+        width: 370px;
+        height: 55%;
+        background-color: #fff;
+        transition: 0.3s;
+        padding: 0px 10px;
+        box-sizing: border-box;
+    }
+    #hamburger-menu ul {
+        padding-left: 42px;
+        rotate: -90deg;
+        padding-bottom: 37px;
+    }
+    .container .flex .col-flex .content h1 {
+        font-size: 37px;
+    }
+    .container .flex {
+        padding: 249px;
+    }
+    .container .flex .col-flex .title p {
+        font-size: 14px;
+    }
+    .container .flex .col-flex .btn button {
+        width: 140px;
+        line-height: 42px;
+    }
+    .container .flex .col-flex img {
+        display: none;
+    }
+    .container .flex .col-flex {
+        padding: 0;
+    }
+    .wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    .wrapper .title .paragraph p {
+        font-size: 12px;
+    }
+    .wrapper .title h1 {
+        font-size: 31px;
+    }
+    .wrapper .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        row-gap: 70px;
+        padding: 41px 25px;
+    }
+    .wrapper .row .col {
+        flex-basis: 48%;
+    }
+    .wrapper .row .col .paragraph p {
+        font-size: 14px;
+    }
+    .blog {
+        width: 100%;
+        height: 100%;
+    }
+    .blog .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 30px;
+    }
+    .blog .row .col {
+        flex-basis: 47%;
+    }
+    .blog .flex .col-flex .content h1 {
+        font-size: 35px;
+    }
+    .blog .flex .col-flex .title h5 {
+        font-size: 15px;
+    }
+    .blog .flex {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .blog .flex .col .img img {
+        width: 503px;
+    }
+    .secondContainer {
+        width: 100%;
+        height: 100%;
+        padding: 50px 0;
+    }
+    .secondContainer .content {
+        padding: 30px;
+    }
+    .secondContainer .content h1 {
+        font-size: 33px;
+    }
+    .secondContainer .massive-image img {
+        width: 500px;
+    }
+    .section-1a-error {
+        width: 100%;
+        height: 100%;
+    }
+    .section-1a-error .row {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .section-1a-error .row .col .bttn button {
+        width: 140px;
+        line-height: 43px;
+    }
+    .section-1a-error .row .col .content h1 {
+        font-size: 36px;
+    }
+    .section-1a-error .row .col .title h5 {
+        font-size: 15px;
+    }
+    .Glint-explore {
+        width: 100%;
+        height: 100%;
+    }
+    .Glint-explore .row {
+        flex-wrap: wrap;
+        flex-direction: row;
+        row-gap: 70px;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+        column-gap: 100px;
+    }
+    .Glint-explore .row .col .main .price span {
+        left: 71%;
+    }
+    .Glint-explore .row .col .main .price .money {
+        left: 20%;
+    }
+    .Glint-explore .row .col .btn button {
+        width: 140px;
+        line-height: 42px;
+    }
+    .Glint-explore .row .col .main .info h1 {
+        font-size: 60px;
+    }
+    .last {
+        width: 100%;
+        height: 100%;
+    }
+    .last .row {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .last .row .col .btn button {
+        width: 140px;
+        line-height: 42px;
+    }
+    .last .row .col .content h1 {
+        font-size: 36px;
+    }
+    .last .row .col .title h5 {
+        font-size: 15px;
+    }
+    .last .row .col img {
+        width: 500px;
+    }
+    .container-2nd-error-fixed {
+        width: 100%;
+        height: 100%;
+    }
+    .container-2nd-error-fixed .content {
+        padding: 25px;
+    }
+    .container-2nd-error-fixed .content h1 {
+        font-size: 31px;
+    }
+    .container-2nd-error-fixed .content .title p {
+        font-size: 12px;
+    }
+    .container-2nd-error-fixed .btn button {
+        width: 180px;
+        line-height: 43px;
+    }
+    .foot {
+        width: 100%;
+        height: 100%;
+    }
+    .foot .row {
+        display: block;
+    }
+    .foot .row .col {
+        position: relative;
+        padding: 50px;
+    }
+    .foot input {
+        position: relative;
+        width: 200px;
+    }
+    .foot button {
+        font-size: 17px;
+    }
+    .foot .second-footer h4 {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width:769px) and (max-width:991px) {
+    body,
+    html {
+        overflow-x: hidden;
+        scrollbar-width: smooth;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+    .container header .row .col {
+        flex-basis: 13%;
+    }
+    .container header .row {
+        column-gap: 50px;
+        justify-content: flex-start;
+    }
+    .container .flex .col-flex .title p {
+        font-size: 13px;
+    }
+    .container .flex .col-flex .content h1 {
+        font-size: 39px;
+    }
+    .container .flex .col-flex {
+        flex-basis: 55%;
+    }
+    .container .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 31px;
+    }
+    .container .flex .col-flex img {
+        width: 400px;
+    }
+    .wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    .wrapper .title h1 {
+        font-size: 32px;
+    }
+    .wrapper .title .paragraph p {
+        font-size: 13px;
+    }
+    .wrapper .row {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+    .wrapper .row .col {
+        flex-basis: 45%;
+    }
+    .blog .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .blog {
+        width: 100%;
+        height: 100%;
+    }
+    .blog .flex {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .blog .flex .col-flex .img img {
+        width: 460px;
+    }
+    .blog .flex .col-flex .content h1 {
+        font-size: 37px;
+    }
+    .blog .flex .col-flex .title h5 {
+        font-size: 15px;
+    }
+    .blog .flex .col-flex .title p {
+        font-size: 13px;
+    }
+    .blog .row .col button {
+        width: 177px;
+    }
+    .secondContainer {
+        width: 100%;
+        height: 100%;
+    }
+    .secondContainer .title p {
+        font-size: 13px;
+    }
+    .secondContainer .content h1 {
+        font-size: 32px;
+    }
+    .secondContainer .massive-image img {
+        width: 500px;
+    }
+    .section-1a-error {
+        width: 100%;
+        height: 100%;
+    }
+    .section-1a-error .row {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .section-1a-error .row .col img {
+        width: 550px;
+    }
+    .Glint-explore {
+        width: 100%;
+        height: 100%;
+    }
+    .Glint-explore .title .content p {
+        font-size: 13px;
+    }
+    .Glint-explore .title h1 {
+        font-size: 33px;
+    }
+    .Glint-explore .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 50px;
+        align-items: center;
+        justify-content: center;
+        column-gap: 50px;
+    }
+    .Glint-explore .row .col .main .price .money {
+        bottom: 16px;
+    }
+    .Glint-explore .row .col .main .info h1 {
+        top: 72px;
+    }
+    .last {
+        width: 100%;
+        height: 100%;
+    }
+    .last .row .col img {
+        width: 530px;
+    }
+    .last .row {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .container-2nd-error-fixed {
+        width: 100%;
+        height: 100%;
+    }
+    .container-2nd-error-fixed .content .title p {
+        font-size: 13px;
+    }
+    .foot {
+        width: 100%;
+        height: 100%;
+    }
+    .foot .row .col i {
+        top: 19px;
+    }
+    .foot .row {
+        flex-wrap: wrap;
+        flex-direction: row;
+        row-gap: 50px;
+    }
+}
+
+@media only screen and (min-width:992px) and (max-width:1029px) {
+    body,
+    html {
+        overflow-x: hidden;
+        scrollbar-width: smooth;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+    .container header .row .col {
+        flex-basis: 20%;
+    }
+    .container .flex .col-flex img {
+        width: 459px;
+    }
+    .container .flex .col-flex .content h1 {
+        font-size: 39px;
+    }
+    .container .flex .col-flex .title p {
+        font-size: 13px;
+    }
+    .wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    .wrapper .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 50px;
+    }
+    .blog {
+        width: 100%;
+        height: 100%;
+    }
+    .blog .flex .col-flex .title p {
+        font-size: 12px;
+    }
+    .secondContainer {
+        width: 100%;
+        height: 100%;
+    }
+    .secondContainer .massive-image img {
+        width: 660px;
+    }
+    .secondContainer .massive-image {
+        padding: 50px 0;
+    }
+    .secondContainer .content h1 {
+        font-size: 33px;
+    }
+    .section-1a-error {
+        width: 100%;
+        height: 100%;
+    }
+    .section-1a-error .row .col img {
+        width: 447px;
+    }
+    .section-1a-error .row .col .content h1 {
+        font-size: 39px;
+    }
+    .section-1a-error .row .col .title p {
+        font-size: 12px;
+    }
+    .Glint-explore {
+        width: 100%;
+        height: 100%;
+    }
+    .Glint-explore .title .content p {
+        font-size: 13px;
+    }
+    .Glint-explore .title h1 {
+        font-size: 33px;
+    }
+    .Glint-explore .row .col .main .price .money {
+        left: 26%;
+        bottom: 19px;
+    }
+    .Glint-explore .row .col .main .info h1 {
+        font-size: 64px;
+    }
+    .last {
+        width: 100%;
+        height: 100%;
+    }
+    .last .row .col .content h1 {
+        font-size: 37px;
+    }
+    .last .row .col .title h5 {
+        font-size: 15px;
+    }
+    .last .row .col img {
+        width: 457px;
+    }
+    .last .row .col .title p {
+        font-size: 12px;
+    }
+    .container-2nd-error-fixed {
+        width: 100%;
+        height: 100%;
+    }
+    .container-2nd-error-fixed .content h1 {
+        font-size: 33px;
+    }
+    .container-2nd-error-fixed .content .title p {
+        font-size: 12px;
+    }
+    .foot {
+        width: 100%;
+        height: 100%;
+    }
+    .foot .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 50px;
+    }
+}
